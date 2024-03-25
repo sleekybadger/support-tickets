@@ -1,0 +1,30 @@
+<h1>New comment</h1>
+
+<%= form_with(model: @comment, url: admin_ticket_comments_path(@ticket), method: :post) do |form| %>
+  <% if @comment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% @comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :content, style: "display: block;" %>
+    <%= form.text_area :content %>
+  </p>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to tickets", admin_tickets_path %>
+</div>

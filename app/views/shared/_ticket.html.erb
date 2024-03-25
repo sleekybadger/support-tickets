@@ -1,0 +1,36 @@
+<div id="<%= dom_id ticket %>">
+  <p>
+    <strong>Name:</strong>
+    <%= ticket.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= ticket.email %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= ticket.status %>
+  </p>
+
+  <p>
+    <strong>Subject:</strong>
+    <%= ticket.subject %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= ticket.content %>
+  </p>
+
+  <% ticket.comments.any? && ticket.comments.each do |comment| %>
+    <p><strong>Comments:</strong></p>
+
+    <div id="<%= dom_id comment %>">
+      <p><%= comment.created_at %></p>
+      <p><%= comment.content %></p>
+      <hr />
+    </div>
+  <% end %>
+</div>

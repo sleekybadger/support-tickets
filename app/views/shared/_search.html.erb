@@ -1,0 +1,7 @@
+<div id="search">
+  <%= form_tag search_path, method: :get do %>
+    <%= search_field_tag :query, query %>
+    <%= select_tag :status, options_for_select(Ticket::STATUSES, status), prompt: 'Status' %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>

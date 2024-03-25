@@ -14,6 +14,12 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+# State Machine
+gem "aasm"
+
+# CSV
+gem "csv"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -23,4 +29,7 @@ group :development, :test do
 
   gem "rspec-rails"
   gem "factory_bot_rails"
+  gem "faker"
+  gem "database_cleaner"
+  gem "shoulda-matchers"
 end

@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+<p style="color: red"><%= alert %></p>
+
+<h1>Manage Tickets</h1>
+
+<%= render "shared/statistic", statistic: @statistic %>
+<%= render "shared/search", search_path: admin_tickets_path, query: @query, status: @status %>
+
+<div id="tickets">
+  <% @tickets.each do |ticket| %>
+    <%= render "shared/ticket", ticket: ticket %>
+
+    <p>
+      <%= link_to 'Add new comment', new_admin_ticket_comment_path(ticket) %>
+      <%= button_to "Start", start_admin_ticket_path(ticket), action: "start", method: :put %>
+      <%= button_to "Resolve", resolve_admin_ticket_path(ticket), action: "resolve", method: :put %>
+      <%= button_to "Destroy", admin_ticket_path(ticket), action: "delete", method: :delete %>
+    </p>
+  <% end %>
+</div>
+
