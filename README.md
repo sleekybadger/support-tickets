@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple support tickets system.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Tickets stored in a CSV file first
+* Tickets imported from CSV file to DB via `rake tickets:import`
+* Tickets can be managed by admin
+* Admin can add comments to tickets
+* Ticket resolved state can't be applied prior to posting a comment to the ticket
+* Tickets view include filtering by fields and statistics
